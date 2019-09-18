@@ -1,10 +1,23 @@
-import _ from 'lodash';
+import _ from "lodash";
+import "./style.css";
+import Icon from "./icon.jpg";
 
 function component() {
-  var element = document.createElement('div');
+  var element = document.createElement("div");
 
-  element.innerHTML = _.join(['Hello', 'webpack', ' ']);
+  element.innerHTML = _.join(["Hello", "webpack", " "]);
+  element.classList.add("hello");
 
+  var myIcon = new Image();
+  console.log("myIcon", myIcon);
+  myIcon.src = Icon;
+  myIcon.classList.add("what");
+
+  element.appendChild(myIcon);
+
+  console.log("myIcon2", myIcon);
+
+  
   return element;
 }
 
