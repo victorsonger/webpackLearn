@@ -1,6 +1,7 @@
 import _ from "lodash";
 import "./style.css";
 import Icon from "./icon.jpg";
+import Data from "./data.xml";
 
 function component() {
   var element = document.createElement("div");
@@ -17,6 +18,7 @@ function component() {
 
   console.log("myIcon2", myIcon);
 
+  console.log('Data', Data);
   
   return element;
 }
