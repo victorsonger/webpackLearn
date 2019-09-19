@@ -8,9 +8,14 @@ module.exports = {
     app: "./src/index.js",
     print: "./src/print.js"
   },
+  devtool: 'inline-source-map',
+  // 告诉开发服务器，在哪里查找文件
+  devServer: {
+    contentBase: './dist'
+  },
   plugins: [
     new HtmlWebpackPlugin({
-        title: "管理输出"
+        title: "开发"
       }),
     // 清理 /dist 文件夹
     new CleanWebpackPlugin(),
@@ -20,6 +25,8 @@ module.exports = {
   ],
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    // publicPath 也会在服务器脚本用到，以确保文件资源能够在 http://localhost:3000 下正确访问
+    publicPath: '/'
   }
 };
