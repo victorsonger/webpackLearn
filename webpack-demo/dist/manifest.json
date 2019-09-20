@@ -1,5 +1,6 @@
 {
+  "vendors~another~app.js": "vendors~another~app.bundle.js",
+  "another.js": "another.bundle.js",
   "app.js": "app.bundle.js",
-  "print.js": "print.bundle.js",
   "index.html": "index.html"
 }
