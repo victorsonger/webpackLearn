@@ -11,4 +11,4 @@ https://webpack.docschina.org/guides/code-splitting/
 防止重复：使用 SplitChunksPlugin 去重和分离 chunk。
 动态导入：通过模块中的内联函数调用来分离代码。
 
-本分支展示第一和第二种方法
+本分支展示第三种方法

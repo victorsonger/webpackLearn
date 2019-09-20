@@ -6,7 +6,7 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 module.exports = {
   entry: {
     app: "./src/index.js",
-    another: "./src/another-module.js"
+    // another: "./src/another-module.js"
   },
   plugins: [
     new HtmlWebpackPlugin({
