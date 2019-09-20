@@ -1,5 +1,10 @@
 import {cube} from './math';
 
+// 看一下在什么环境
+if (process.env.NODE_ENV !== 'production') {
+  console.log('看起来我们在开发环境');
+}
+
 function component() {
   var element = document.createElement('pre');
 

@@ -9,10 +9,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "server": "node server.js",
     "hot-replace-server": "node dev-server.js",
-    "build": "webpack"
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "webpack-dev-middleware": "^3.7.1",
     "webpack-dev-server": "^3.8.1",
     "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.2.2",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.7.1",
     "webpack-dev-server": "^3.8.1",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-manifest-plugin": "^2.0.4",
+    "webpack-merge": "^4.2.2"
   }
 }
