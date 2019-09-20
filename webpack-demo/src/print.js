@@ -1,5 +1,3 @@
 export default function printMe() {
-  console.log("I get called from print.js!!!");
-
-
+  console.log("正在更新 hot  print.js...");
 }
