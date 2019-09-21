@@ -1,22 +1,25 @@
-async function getComponent() {
+import _ from "lodash";
+
+function component() {
   var element = document.createElement("div");
+  var button = document.createElement("button");
+  var br = document.createElement("br");
 
-  // 在注释中我们提供了 webpackChunkName。这样会将拆分出来的 bundle 命名为 lodash.bundle.js，而不是 [id].bundle.js
-  // 在webpack4中通过import()导入后，你需要通过result.default来获取结果  例如
-  //  module.exports = 42;
-
-  // webpack 3打印的结果
-  // 42
-  // webpack 4打印的结果
-  // { default: 42 }
-  const { default: _ } = await import(
-    /* webpackChunkName: "lodash" */ "lodash"
-  );
-
+  button.innerHTML = "按我看console!!";
   element.innerHTML = _.join(["HELLO", "WEBPACK"], " ");
+  element.appendChild(br);
+  element.appendChild(button);
+
+  button.onclick = e =>
+    // 注意当调用 ES6 模块的 import() 方法（引入模块）时，必须指向模块的 .default 值，因为它才是 promise 被处理后返回的实际的 module 对象。 (webpack 4)
+    import(/* webpackChunkName: "print" */ "./print").then(module => {
+      console.log('m引入的module', module);
+      var print = module.default;
+
+      print();
+    });
+
   return element;
 }
 
-getComponent().then(component => {
-  document.body.appendChild(component);
-});
+document.body.appendChild(component());

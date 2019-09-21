@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "代码分离"
+      title: "懒加载"
     }),
     // 清理 /dist 文件夹
     new CleanWebpackPlugin(),
