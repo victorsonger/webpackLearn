@@ -1,5 +1,6 @@
 {
-  "app.js": "app.bundle.js",
-  "vendors~lodash.js": "vendors~lodash.bundle.js",
+  "app.js": "app.5d0ed37985b27ea37115.js",
+  "runtime.js": "runtime.2b3c3289f8cbf7d75bbc.js",
+  "venders.js": "venders.49ff835a0ffd118358e6.js",
   "index.html": "index.html"
 }
