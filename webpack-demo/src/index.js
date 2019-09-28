@@ -18,4 +18,18 @@ function component() {
   return element;
 }
 
+console.log("navigator", navigator);
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(registration => {
+        console.log("SW 已注册：", registration);
+      })
+      .catch(registrationError => {
+        console.log("SW registration failed: ", registrationError);
+      });
+  });
+}
 document.body.appendChild(component());
