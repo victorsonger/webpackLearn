@@ -8,9 +8,17 @@ module.exports = {
   },
   module: {
     rules: [
+      // 使用imports-loader覆盖this的指向
+      // https://webpack.docschina.org/loaders/imports-loader/
       {
-        test: require.resolve(index.js),
-        use: ''
+        test: require.resolve('./src/index.js'),
+        use: 'imports-loader?this=>window'
+      },
+      // 使用exports-loader，将一个全局变量作为一个普通的模块来导出
+      // https://webpack.docschina.org/loaders/exports-loader/
+      {
+        test: require.resolve('./src/global.js'),
+        use: 'exports-loader?file,parse=helpers.parse'
       }
     ]
   },

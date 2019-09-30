@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{5:function(n,o){var e=function(){console.log("parse something")};o.file="blah.txt",o.parse=e}}]);
