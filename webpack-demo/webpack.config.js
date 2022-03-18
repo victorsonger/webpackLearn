@@ -41,7 +41,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    // publicPath 也会在服务器脚本用到，以确保文件资源能够在 http://localhost:3000 下正确访问
+    // publicPath 也会在服务器脚本用到，以确保文件资源能够在 http://localhost:5000 下正确访问
     publicPath: '/'
   }
 };

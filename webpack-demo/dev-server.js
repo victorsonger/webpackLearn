@@ -12,13 +12,13 @@ const config = require('./webpack.config');
 const options = {
     contentBase: './dist',
     hot: true,
-    host: 'localhost'
+    host: '127.0.0.1' // 这里的host需要与下面listen的host一样，且都为127.0.0.1 （写成localhost会报错  原因是本地开了crashX代理）
 }
 
 WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, options);
 
-server.listen(5000, 'localhost', () => {
+server.listen(5000, '127.0.0.1', () => {
     console.log('正在5000端口跑服务');
 });
